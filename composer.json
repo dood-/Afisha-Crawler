@@ -1,0 +1,17 @@
+{
+    "name": "dood/afisha-crawler",
+    "authors": [
+        {
+            "name": "Daniel Gurev",
+            "email": "doodka.dood@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/dom-crawler": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "AfishaCrawler\\": "src/"
+        }
+    }
+}
