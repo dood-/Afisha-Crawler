@@ -1,17 +1,22 @@
 {
-    "name": "dood/afisha-crawler",
-    "authors": [
-        {
-            "name": "Daniel Gurev",
-            "email": "doodka.dood@gmail.com"
-        }
-    ],
-    "require": {
-        "symfony/dom-crawler": "^4.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "AfishaCrawler\\": "src/"
-        }
+  "name": "dood/afisha-crawler",
+  "authors": [
+    {
+      "name": "Daniel Gurev",
+      "email": "doodka.dood@gmail.com"
     }
+  ],
+  "require": {
+    "symfony/dom-crawler": "^4.4",
+    "guzzlehttp/guzzle": "~6.0",
+    "webmozart/assert": "^1.6",
+    "symfony/css-selector": "^4.4",
+    "ext-pcntl": "*",
+    "ext-shmop": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "AfishaCrawler\\": "src/"
+    }
+  }
 }
