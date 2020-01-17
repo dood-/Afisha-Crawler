@@ -7,8 +7,6 @@ namespace AfishaCrawler;
 use AfishaCrawler\Entity\Event;
 use AfishaCrawler\Parsers\Parser;
 
-require '../vendor/autoload.php';
-
 class Crawler
 {
     /** @var Parser[] */
