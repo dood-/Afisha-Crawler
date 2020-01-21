@@ -36,7 +36,7 @@ class EventSession
         return $this->datetime;
     }
 
-    public function getCost(): string
+    public function getCost(): ?string
     {
         return $this->cost;
     }
