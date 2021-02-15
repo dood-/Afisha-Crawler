@@ -33,6 +33,11 @@ class Kinomax extends BaseParser
                     ->filter('a')
                     ->reduce(function (Crawler $link) {
                         $href = $link->attr('href');
+
+                        if(empty($href)) {
+                            return false;
+                        }
+
                         return preg_match('/^\/filmdata\/\d+$/', $href);
                     })
                     ->first()

@@ -17,7 +17,7 @@ class AgeRestriction
      */
     public function __construct(string $restriction)
     {
-        Assert::oneOf($restriction, ['0+', '6+', '12+', '16+', '18+']);
+        Assert::oneOf($restriction, ['0+', '6+', '12+', '14+', '16+', '18+']);
         $this->value = $restriction;
     }
 

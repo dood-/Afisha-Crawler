@@ -9,6 +9,7 @@ use AfishaCrawler\Entity\AgeRestriction;
 use AfishaCrawler\Entity\Event;
 use AfishaCrawler\Entity\EventSession;
 use DateTimeImmutable;
+use InvalidArgumentException;
 use Symfony\Component\DomCrawler\Crawler;
 
 class P24 extends BaseParser
@@ -51,7 +52,11 @@ class P24 extends BaseParser
         return $this->fetcher->get($url)
             ->each(function (Crawler $item) {
                 $name = $item->filter('.step1__film_info_title')->text();
-                $desc = $item->filter('.step1__film_info .film__description_info .text')->text();
+                try {
+                    $desc = $item->filter('.step1__film_info .film__description_info .text')->text();
+                } catch (InvalidArgumentException $e) {
+                    $desc = '-';
+                }
                 $age = $item->filter('.step1__film_info_rating')
                     ->each(function (Crawler $age) {
                         return new AgeRestriction($age->text());
