@@ -41,6 +41,17 @@ class GuzzleFetcher implements Fetcher
         return new Crawler($contents);
     }
 
+    public function getJson(string $uri, array $options = []): array
+    {
+        $options = array_merge([
+            'headers' => $this->headers,
+        ], $options);
+
+        $response = $this->client->get($uri, $options);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
     private function fileCache(callable $func) {
         return function() use ($func) {
             $args = func_get_args();

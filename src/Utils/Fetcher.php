@@ -10,4 +10,6 @@ use Symfony\Component\DomCrawler\Crawler;
 interface Fetcher
 {
     public function get(string $uri, array $options = []): Crawler;
+
+    public function getJson(string $uri, array $options = []): array;
 }
